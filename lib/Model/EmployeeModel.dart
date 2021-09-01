@@ -20,14 +20,14 @@ class EmployeeModel {
     required this.company,
   });
 
-  int id;
-  String name;
-  String username;
-  String email;
-  String profileImage;
-  Address address;
-  String phone;
-  String website;
+  int? id;
+  String? name;
+  String? username;
+  String? email;
+  String? profileImage;
+  Address? address;
+  String? phone;
+  String? website;
   Company? company;
 
   factory EmployeeModel.fromJson(Map<String, dynamic> json) => EmployeeModel(
@@ -35,8 +35,9 @@ class EmployeeModel {
         name: json["name"],
         username: json["username"],
         email: json["email"],
-        profileImage:
-            json["profile_image"] == null ? null : json["profile_image"],
+        profileImage: json["profile_image"] == null
+            ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMy18W7IoFXthNrtFcb0A2dUOn4cTqllAv7g&usqp=CAU"
+            : json["profile_image"],
         address: Address.fromJson(json["address"]),
         phone: json["phone"] == null ? null : json["phone"],
         website: json["website"] == null ? null : json["website"],
@@ -50,7 +51,7 @@ class EmployeeModel {
         "username": username,
         "email": email,
         "profile_image": profileImage == null ? null : profileImage,
-        "address": address.toJson(),
+        "address": address!.toJson(),
         "phone": phone == null ? null : phone,
         "website": website == null ? null : website,
         "company": company == null ? null : company!.toJson(),
