@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class EmployeeDetailpage extends StatelessWidget {
   EmployeeDetailpage({Key? key, required this.employeeModel}) : super(key: key);
   EmployeeModel employeeModel;
+  //DEMO
   @override
   Widget build(BuildContext context) {
     return Scaffold(
